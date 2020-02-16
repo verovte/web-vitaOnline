@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="card" style="background-color:gray">
+    <form [formGroup]="editForm" (ngSubmit)="submitHandler()">
+      <div class="container" style="text-align: center">
+        <div class="col">
+          <h3 style="text-align: center">Perfil</h3>
+          <input class="form-group" type=" text " placeholder="Nombre compañia" formControlName="CompanyName" disabled>
+          <br>
+          <input class="form-group" type=" text " placeholder="Dominio" formControlName="CompanyDomain">
+          <br>
+          <input class="form-group" type=" number " placeholder="Año establecido" formControlName="Established">
+          <br>
+          <input class="form-group" type=" text " placeholder="Dirección" formControlName="Address">
+          <br>
+          <input class="form-group" type=" number " placeholder="Empleados contratados" formControlName="EmployeeCount">
+          <br>
+          <input class="form-group" type=" email " placeholder="Email" formControlName="Email">
+          <br>
+
+          <!-- <input class="no_field" input type="text" pattern="\d*" maxlength="6" placeholder=" Enter Quantity" formControlName="quantity"><br> -->
+          <br>
+        </div>
+        <div class="col">
+          <button type="submit" class="btn btn-success">Guardar </button>&nbsp;
+          <button type="button" class="btn btn-danger" (click)="cancel()">Cancelar</button>
+        </div>
+        <br> </div>
+    </form>
+  </div>
+</div>

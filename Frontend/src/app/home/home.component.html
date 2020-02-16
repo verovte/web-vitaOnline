@@ -1,0 +1,58 @@
+<div class="post-container">
+
+
+    <div class="container">
+
+        <h2 class="head">Búsqueda de trabajo</h2><br><br><br><br>
+
+        <br>
+        <form [formGroup]="searchdata">
+        <div class="input-group mb-3" id="search">
+            
+                <input type="text" class="form-control" placeholder="Conocimientos..." formControlName="Search" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2" (click)="Search()">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
+            
+        </div>
+    </form>
+    </div><br><br>
+    
+    <div *ngIf="searchdetails.length">
+            <h2 class="head">Trabajos buscados</h2><br><br>.
+            <div class="post" *ngFor="let posts of searchdetails">
+                <h5>Empresa:&nbsp;{{posts.Provider_id.CompanyName}}</h5>
+                <hr>
+                <h6>Trabajo:&nbsp;<small>{{ posts.JobTitle}}</small></h6>
+                <h6><i class="fas fa-map-marker-alt"></i>&nbsp;Ubicación:&nbsp;<small>{{ posts.Location}}</small></h6>
+    
+                <h6>Salario:&nbsp;<small>{{ posts.Package}} mensual</small></h6>
+                <h6>Conocimientos requeridos:  <small>{{ posts.SkillsRequire}}</small></h6>
+                <hr>
+                <button class="btn" (click)="view(posts._id)">Ampliar</button>
+                <button class="btn" (click)="applyJob(posts._id)">Inscribirse</button>
+            </div>
+        </div>
+
+
+
+    
+        <br><br><br><br><div class="center" *ngIf="postdetails.length && show">
+            <h2 class="head">Ofertas de trabajo</h2><br><br><br><br>
+        <div class="post" *ngFor="let posts of postdetails">
+            <h5>Empresa:&nbsp;{{posts.Provider_id.CompanyName}}</h5>
+            <hr>
+            <h6>Trabajo:&nbsp;<small>{{ posts.JobTitle}}</small></h6>
+            <h6><i class="fas fa-map-marker-alt"></i>&nbsp;Ubicación:&nbsp;<small>{{ posts.Location}}</small></h6>
+
+            <h6>Salario:&nbsp;<small>{{ posts.Package}} mensual</small></h6>
+            <h6>Publicado:&nbsp;<small>{{ posts.createdAt | date}} </small></h6>
+            <hr>
+            <button class="btn" (click)="view(posts._id)">Ampliar</button>
+            <button class="btn" (click)="applyJob(posts._id)">Inscribirse</button>
+        </div>
+    </div>
+</div>

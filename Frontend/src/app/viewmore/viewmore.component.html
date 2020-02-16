@@ -1,0 +1,84 @@
+<br>
+<div class="container">
+
+  <div class="details" *ngIf="postdetails">
+    <button class="btn" (click)="Back()" style="float: right;">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <h1 style="text-align: center">{{postdetails.Provider_id.CompanyName}}
+      <br>
+      <small style="text-align: center">
+        <i>Establecido en {{postdetails.Provider_id.Established}}</i>
+      </small>
+    </h1>
+    <br>
+    <div class="row">
+      <div class="col">
+        <h5>Dominio:
+          <i> {{postdetails.Provider_id.CompanyDomain}}</i>
+        </h5>
+      </div>
+      <div class="col" style="text-align: right">
+        <h5>Empleados:
+          <i> {{postdetails.Provider_id.EmployeeCount}}</i>
+        </h5>
+      </div>
+    </div>
+    <br>
+    <hr>
+
+
+    <h3 style="text-align: center">
+      <i class="fas fa-briefcase"></i> Descripcion</h3>
+    <br>
+    <div class="row">
+      <div class="col" style="text-align: right;">
+        <h4>Trabajo:</h4>
+        <h4>Dirección:</h4>
+        <h4>Experiencia requerida:</h4>
+        <h4>Salario ofrecido:</h4>
+        <h4>Descripcion:</h4>
+        <br>
+        <h4>Inscritos en la oferta:</h4>
+        <h4>Fecha de inscripción:</h4>
+        <h4>Conocimientos requeridos:</h4>
+
+      </div>
+      <div class="col">
+        <h4>
+          <i>{{postdetails.JobTitle}}</i>
+        </h4>
+        <h4>
+          <i>{{postdetails.Location}}</i>
+        </h4>
+
+        <h4>
+          <i>{{postdetails.ExperienceRequire}} años</i>
+        </h4>
+        <h4>
+          <i>{{postdetails.Package}} por mes</i>
+        </h4>
+        <h4>
+          <i>{{postdetails.Description}}</i>
+        </h4>
+        <h4>
+          <i>{{ postdetails.count}}</i>
+        </h4>
+
+        <h4>
+          <i>{{ postdetails.LastDate | date}}</i>
+        </h4>
+        <h4>
+          <i>{{ postdetails.SkillsRequire}}</i>
+        </h4>
+
+      </div>
+    </div>
+    <hr>
+    <button id="button" class="btn btn-lg" (click)="applyJob(postdetails._id)">Inscribirse</button>
+
+  </div>
+</div>
+<br>
+<br>

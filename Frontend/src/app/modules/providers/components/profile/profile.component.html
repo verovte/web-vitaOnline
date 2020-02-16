@@ -1,0 +1,22 @@
+<div class="container" *ngIf="res">
+  <br>
+  <br>
+  <div class="card">
+    <br>
+    <i class="fas fa-edit" (click)="editProduct(res.CompanyName)" style="text-align: right">Editar</i>
+    <img class="center" src="https://cdn3.iconfinder.com/data/icons/business-ii-1/100/20-512.png" alt="Avatar" style="width:30%; height:30% ;">
+    <div class="container">
+      <h4>
+        <b>{{res.CompanyName | uppercase}}</b>
+      </h4>
+      <p>Dominio - {{res.CompanyDomain}}</p>
+      <p>Dirección - {{res.Address}}</p>
+      <p>Año establecido - {{res.Established}}</p>
+      <p>Contacto - {{res.Email}}</p>
+      <p>Empleados contratados - {{res.EmployeeCount}}</p>
+    </div>
+
+
+  </div>
+
+</div>

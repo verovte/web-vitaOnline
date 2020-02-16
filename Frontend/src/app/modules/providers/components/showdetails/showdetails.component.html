@@ -1,0 +1,41 @@
+<table  >
+    <thead>
+      <tr>
+        <td class="hd">Sr. No.</td>
+        <td class="hd">Trabajo</td>
+        <td class="hd">Vacantes</td>
+        <td class="hd ">Dirección</td>
+        <td class="hd1">
+          <tr>
+            <td class="hd">Nombre candidato</td>
+            <td class="hd">Conocimientos candidato</td>
+            <td class="hd">Contacto candidato</td>
+            <td class="hd">Email candidato</td>
+            <td class="hd">Resume</td>
+        </tr>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let d of details; let i = index;">
+        <td>{{i+1}}</td>
+        <td>{{d.JobTitle}}</td>
+        <td>{{d.Vacancies}}</td>
+        <td>{{d.Location}}</td>
+        <td>
+          <tr *ngFor ="let m of d.appliedUsers_id">
+            <td>{{ m.FirstName}} {{ m.LastName}}</td>
+            <td>{{ m.Skills}}</td>
+            <td>{{m.Phone}}</td>
+            <td>{{m.Email}}</td>
+            <td><a (click)="showResume(m.Resume)"><i class="fas fa-eye" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='blue'"></i></a></td>
+          </tr>
+        </td> 
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+  
