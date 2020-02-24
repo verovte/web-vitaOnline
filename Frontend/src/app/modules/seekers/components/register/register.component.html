@@ -1,17 +1,17 @@
 <br><br>
 <div class="register ">
   <form [formGroup]="Registerdata" enctype='multipart/form-data' (ngSubmit)="Register()">
-    <h3>Register</h3>
+    <h3>Registrar</h3>
     <table>
       
       <tr>
         <td>
-          <label>First Name:</label>
-          <input class="field" type="text" placeholder="FirstName" formControlName="FirstName"><br>
+          <label>Nombre:</label>
+          <input class="field" type="text" placeholder="Nombre" formControlName="FirstName"><br>
         </td>
         <td>
-          <label>Last Name:</label>
-          <input class="field" type="text" placeholder="LastName" formControlName="LastName"><br>
+          <label>Apellidos:</label>
+          <input class="field" type="text" placeholder="Apellidos" formControlName="LastName"><br>
         </td>
       </tr>
       <tr>
@@ -30,29 +30,29 @@
           <input class="field" type="email" placeholder="Email" formControlName="Email"><br>
         </td>
         <td>
-          <label>Conatct No:</label>
+          <label>Nº Contacto:</label>
           <input class="field" type="number" maxlength="10" placeholder="Conatct No" formControlName="Phone"><br>
         </td>
       </tr>
     </table>
-    <label>Experience:</label>
-    <input class="field" type="number" placeholder="Experience in Years" formControlName="Experience"><br><br>
-    <label>Skills:</label>
-    <input class="field" type="text" placeholder="Skills" formControlName="Skills">
-    <label>Address:</label>
-    <input class="field" type="text" placeholder="Address" formControlName="Address"><br><br>
+    <label>Experiencia:</label>
+    <input class="field" type="number" placeholder="Experiencia en años" formControlName="Experience"><br><br>
+    <label>Conocimientos:</label>
+    <input class="field" type="text" placeholder="Conocimientos" formControlName="Skills">
+    <label>Dirección:</label>
+    <input class="field" type="text" placeholder="Dirección" formControlName="Address"><br><br>
     <div class="fileupload">
       <input type="file" id="customFile" (change)="onchangefile($event)"><br>
-      <button class="btn" type="button" (click)="uploadFile()">Upload CV</button>
+      <button class="btn" type="button" (click)="uploadFile()">Añadir CV</button>
     </div>
 
     <div class="fileupload">
       <input type="file" id="customFile1" (change)="onchangephoto($event)"><br>
-      <button class="btn" type="button" (click)="uploadPhoto()">Upload Photo</button>
+      <button class="btn" type="button" (click)="uploadPhoto()">Añadir foto</button>
     </div>
     <input class="btn btn-lg" type="submit" value="Register" [disabled]="!this.Registerdata.valid">
     <br><br>
-    <a routerLink="/users/login">Already Registered?</a>
+    <a routerLink="/users/login">¿Ya estás registrado?</a>
   </form>
 </div>
 <br><br>
